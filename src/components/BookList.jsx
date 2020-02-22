@@ -4,7 +4,7 @@ import { graphql } from 'react-apollo';
 
 const getBooksQuery = gql`
   {
-    getBooks {
+    books {
       name
       id
     }
@@ -18,7 +18,7 @@ class BookList extends Component {
       return <div>Loading...</div>
     }
     else {
-      return data.getBooks.map(book => <li key={book.id}>{book.name}</li>)
+      return data.books.map(book => <li key={book.id}>{book.name}</li>)
     }
   }
 
