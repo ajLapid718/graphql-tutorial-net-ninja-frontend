@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
-import { getAuthorsQuery, addBookMutation } from '../queries/queries';
+import { getAuthorsQuery, addBookMutation, getBooksQuery } from '../queries/queries';
 import { flow as compose } from 'lodash';
 
 class AddBook extends Component {
@@ -30,7 +30,7 @@ class AddBook extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addBookMutation({variables: this.state});
+    this.props.addBookMutation({ variables: this.state, refetchQueries: [{ query: getBooksQuery }]});
   }
 
   render() {
