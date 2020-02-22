@@ -30,6 +30,7 @@ class AddBook extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.props.addBookMutation({variables: this.state});
   }
 
   render() {
