@@ -14,7 +14,28 @@ const getAuthorsQuery = gql`
 class AddBook extends Component {
   render() {
     return (
-      <h1>Hello World</h1>
+      <form id="add-book">
+
+        <div className="form-field">
+          <label>Book Name:</label>
+          <input type="text"></input>
+        </div>
+
+        <div className="form-field">
+          <label>Genre:</label>
+          <input type="text"></input>
+        </div>
+
+        <div className="form-field">
+          <label>Author</label>
+          <select>
+            <option>Select Author</option>
+          </select>
+        </div>
+
+      </form>
     );
   }
 }
+
+export default AddBook;
