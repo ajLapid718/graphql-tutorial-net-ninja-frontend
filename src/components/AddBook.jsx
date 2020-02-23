@@ -30,7 +30,7 @@ class AddBook extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addBookMutation({ variables: this.state, refetchQueries: [{ query: getBooksQuery }]});
+    this.props.addBookMutation({ variables: this.state, refetchQueries: [{ query: getBooksQuery }]}); // this method call returns a PROMISE;
   }
 
   render() {
